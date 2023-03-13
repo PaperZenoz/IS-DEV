@@ -1,0 +1,81 @@
+body
+  font-family: 'Inter', sans-serif
+
+p
+  margin-bottom: 30px
+  line-height: 1.4
+  @extend %400
+  font-size: 20px
+  color: white
+
+span
+  color: $black
+  @extend %fz18
+  line-height: 1.4
+  display: block
+
+%radius-big
+  border-radius: 40px
+
+
+.nav
+  display: flex
+  gap: 60px
+
+.header
+  padding-top: 60px
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+
+
+  &__wrap
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 80px
+
+
+.banner
+  background: linear-gradient(227.87deg, #0C0E42 14.03%, #353A88 86.78%)
+  @extend %white
+  &__wrap
+    @extend %pt140
+    @extend %pb40
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+  &__supertitle
+    @extend %fz30
+    @extend %mb20
+
+  &__title
+    @extend %fz45
+    @extend %up
+
+  &__subtitle
+    @extend %fz35
+    @extend %mt40
+    color: $light-blue
+    @extend %400
+    @extend %mb80
+
+
+
+.company
+  background-color: $pink
+  color: white
+
+  &__wrap
+    @extend %pb120
+
+  &__h2
+    @extend %mb40
+
+  &__btn
+    @extend %mt20
+
+.project
+  background-color: $metal-green
