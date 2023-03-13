@@ -46,11 +46,12 @@ span
   @extend %white
 
   &__wrap
-    @extend %pt140
+    margin-top: 140px
     @extend %pb40
     display: flex
     flex-direction: column
     justify-content: center
+    position: relative
 
   &__supertitle
     @extend %fz30
@@ -67,11 +68,22 @@ span
     @extend %400
     @extend %mb80
 
+  &__bg
+    position: absolute
+    top: -50px
+    right: -100px
+
 .company
   background-color: $pink
   color: white
 
+  &__bg
+    position: absolute
+    right: 0
+    bottom: 0
+
   &__wrap
+    position: relative
     @extend %pb120
 
   &__h2
@@ -82,6 +94,13 @@ span
 
 .project
   background-color: $metal-green
+
+  &__bg
+    position: absolute
+    bottom: -125px
+
+  &__wrap
+    position: relative
 
   &__top
     display: grid
@@ -113,6 +132,15 @@ span
 .team
   background-color: $light-green
 
+
+  &__bg
+    position: absolute
+    right: 50%
+    top: -50px
+
+  &__wrap
+    position: relative
+
   &__grid
     display: grid
     grid-template-columns: repeat(3, 1fr)
@@ -121,15 +149,27 @@ span
 .opportunities
   background-color: $light-gray
 
+
+  &__bg
+    position: absolute
+    top: 50%
+    right: 50%
+    transform: translate(50%, -50%)
+
+  &__wrap
+    position: relative
+
   &__ol
     display: grid
     grid-template-columns: repeat(3, 1fr)
     gap: 30px
+    margin-bottom: 0
 
 
     &.ol li
       margin-bottom: 0
       padding-left: 40px
+      box-shadow: 0px 13px 50px #D1D5E3
 
       &:before
         content: counter(num, decimal-leading-zero)
@@ -143,11 +183,9 @@ span
         left: auto
         line-height: 100px
 
-
   &__item
     padding: 40px
     background-color: $white
-
 
 .footer
   background-color: $dark-gray
