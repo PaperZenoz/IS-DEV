@@ -1,3 +1,7 @@
+%shadow
+  box-shadow: 0px 13px 50px #789499
+
+
 body
   font-family: 'Inter', sans-serif
 
@@ -7,10 +11,11 @@ p
   @extend %400
   font-size: 20px
   color: white
+  @extend %lc
 
 span
   color: $black
-  @extend %fz18
+  font-size: 18px
   line-height: 1.4
   display: block
 
@@ -36,10 +41,10 @@ span
     justify-content: space-between
     height: 80px
 
-
 .banner
   background: linear-gradient(227.87deg, #0C0E42 14.03%, #353A88 86.78%)
   @extend %white
+
   &__wrap
     @extend %pt140
     @extend %pb40
@@ -62,8 +67,6 @@ span
     @extend %400
     @extend %mb80
 
-
-
 .company
   background-color: $pink
   color: white
@@ -79,3 +82,101 @@ span
 
 .project
   background-color: $metal-green
+
+  &__top
+    display: grid
+    grid-template-columns: auto 630px
+    gap: 30px
+    margin-bottom: 50px
+
+  &__left-content
+    position: relative
+
+    img
+      position: absolute
+      top: -230px
+      left: -70px
+
+  &__more-link
+    margin-top: 60px
+    margin-bottom: 60px
+    display: inline-block
+    display: flex
+    justify-content: right
+
+
+  &__buttons
+    display: flex
+    gap: 20px
+    justify-content: right
+
+.team
+  background-color: $light-green
+
+  &__grid
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 20px
+
+.opportunities
+  background-color: $light-gray
+
+  &__ol
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 30px
+
+
+    &.ol li
+      margin-bottom: 0
+      padding-left: 40px
+
+      &:before
+        content: counter(num, decimal-leading-zero)
+        position: absolute
+        right: 80px
+        top: 40px
+        font-size: 100px
+        color: $ultra-light-gray
+        @extend %900
+        background-color: $transparent
+        left: auto
+        line-height: 100px
+
+
+  &__item
+    padding: 40px
+    background-color: $white
+
+
+.footer
+  background-color: $dark-gray
+
+  &__wrap
+    @extend %fb
+    align-items: center
+
+  &__nav
+    display: flex
+    gap: 60px
+
+  &__contacts
+    display: flex
+    flex-direction: column
+    gap: 10px
+
+
+  &__telephone
+    font-size: 20px
+    @extend %900
+    color: $pink
+
+
+  &__mail
+    font-size: 14px
+
+
+      
+
+
+

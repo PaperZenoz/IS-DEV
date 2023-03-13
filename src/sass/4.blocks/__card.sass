@@ -1,0 +1,43 @@
+.card
+  background-color: $white
+  position: relative
+  border-radius: 42px
+  @extend %shadow
+  padding: 60px 40px 40px
+  &__title
+    color: #B78E78
+    @extend %900
+    font-size: 25px
+    padding-bottom: 40px
+    position: relative
+    margin-bottom: 40px
+    line-height: 1
+    width: 100px
+
+    &:before
+      content: ''
+      height: 6px
+      width: 28px
+      display: block
+      position: absolute
+      bottom: 0
+
+      background-color: $light-gray
+
+  &__photo
+    position: absolute
+    right: 40px
+
+  &__content
+    max-height: 350px
+    overflow: hidden
+
+  &__content strong, p
+    color: #86969E
+
+  &__content strong
+    font-size: 20px
+
+  &__content p
+    font-size: 18px
+    line-height: 1.2

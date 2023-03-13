@@ -1,0 +1,25 @@
+.more-link
+
+  &__ancor
+    color: white
+    font-size: 18px
+    padding-bottom: 2px
+    border-bottom: 1px solid white
+    position: relative
+
+    &:before
+      content: ''
+      width: 4px
+      height: 4px
+      position: absolute
+      left: -20px
+      top: 10px
+      transform: translateY(-50%) rotate(45deg)
+      border-right: 2px solid white
+      border-top: 2px solid white
+      transition: all ease .3s
+      font-weight: bold
+
+    &.open:before
+      transform: translateY(-50%) rotate(-135deg)
+      top: calc(50% + 1px)
