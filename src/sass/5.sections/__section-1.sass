@@ -4,17 +4,30 @@
 
 body
   font-family: 'Inter', sans-serif
+  @extend %300
 
 p
   line-height: 1.4
-  @extend %300
+
   font-size: 20px
   @extend %lc
+  @media screen and (max-width: 1365px)
+    font-size: 16px
+
 
 span
   color: $black
   font-size: 18px
   line-height: 1.4
+  @media screen and (max-width: 1365px)
+    font-size: 16px
+
+
+
+br
+  @media screen and (max-width: 1365px)
+    content: " "
+
 
 %radius-big
   border-radius: 40px
@@ -23,6 +36,9 @@ span
 .nav
   display: flex
   gap: 60px
+  @media screen and (max-width: 1365px)
+    display: none
+
 
 .header
   padding-top: 60px
@@ -30,6 +46,9 @@ span
   top: 0
   left: 0
   right: 0
+  @media screen and (max-width: 1365px)
+  	padding-top: 40px
+  
 
 
   &__wrap
@@ -37,6 +56,10 @@ span
     align-items: center
     justify-content: space-between
     height: 80px
+    @media screen and (max-width: 1365px)
+      height: 40px
+
+
 
 .banner
   background: linear-gradient(227.87deg, #0C0E42 14.03%, #353A88 86.78%)
@@ -44,31 +67,51 @@ span
 
   &__wrap
     margin-top: 140px
-    @extend %pb40
+    padding-bottom: 40px
     display: flex
     flex-direction: column
     justify-content: center
     position: relative
+    @media screen and (max-width: 1365px)
+    	margin-top: 70px
+    
 
   &__supertitle
-    @extend %fz30
-    @extend %mb20
+    font-size: 30px
+    margin-bottom: 20px
+    font-weight: 400
+    @media screen and (max-width: 1365px)
+      font-size: 16px
+      margin-bottom: 10px
+
+    
 
   &__title
-    @extend %fz45
-    @extend %up
+    font-size: 45px
+    text-transform: uppercase
+    @media screen and (max-width: 1365px)
+      font-size: 24px
+
 
   &__subtitle
-    @extend %fz35
-    @extend %mt40
+    font-size: 35px
+    margin-top: 40px
     color: $light-blue
-    @extend %400
-    @extend %mb80
+    font-weight: 400
+    margin-bottom: 80px
+    @media screen and (max-width: 1365px)
+      font-size: 20px
+      margin-top: 20px
+      margin-bottom: 25px
+
 
   &__bg
     position: absolute
     top: -50px
     right: -100px
+    @media screen and (max-width: 1365px)
+      display: none
+
 
 .company
   background-color: $pink
@@ -89,9 +132,6 @@ span
     @extend %mt20
 
 
-
-
-
 .project
   background-color: $metal-green
   color: white
@@ -108,10 +148,17 @@ span
     grid-template-columns: auto 630px
     gap: 30px
     margin-bottom: 50px
+    @media screen and (max-width: 1365px)
+      grid-template-columns: 1fr
+      margin-bottom: 30px
+
 
   &__left-content
     position: relative
     pointer-events: none
+    @media screen and (max-width: 1365px)
+      display: none
+
 
     img
       position: absolute
@@ -119,23 +166,31 @@ span
       left: -70px
 
   &__more-link
-    margin-top: 60px
-    margin-bottom: 60px
-    display: inline-block
+    margin: 60px 0
     display: flex
     justify-content: right
+    @media screen and (max-width: 1365px)
+      margin: 30px 0
 
 
   &__buttons
     display: flex
     gap: 20px
     justify-content: right
+    @media screen and (max-width: 767px)
+      flex-direction: column
+      .btn
+        width: 100%
+
+
+
 
 .team
   background-color: $light-green
   background-image: url("../../images/team/bg.png")
   background-repeat: no-repeat
   background-position: left 380px top 56px
+
   &__wrap
     position: relative
 
@@ -143,8 +198,11 @@ span
     display: grid
     grid-template-columns: repeat(3, 1fr)
     gap: 20px
+    @media screen and (max-width: 1365px)
+      grid-template-columns: repeat(2, 1fr)
 
-
+    @media screen and (max-width: 767px)
+      grid-template-columns: 1fr
 
 
 .opportunities
@@ -152,6 +210,7 @@ span
   background-image: url("../../images/opportunities/bg.png")
   background-repeat: no-repeat
   background-position: center center
+
   &__wrap
     position: relative
 
@@ -159,11 +218,6 @@ span
   &__item
     padding: 40px
     background-color: $white
-
-
-
-
-
 
 .vacancy
   background-color: $metal-green
@@ -174,7 +228,8 @@ span
 
   &__card-list
     margin-top: 90px
-
+    @media screen and (max-width: 1365px)
+      margin-top: 20px
 
 .resume
   background-color: $light-green
@@ -186,12 +241,20 @@ span
     text-align: center
     color: $black
     margin-bottom: 100px
+    @media screen and (max-width: 1365px)
+      margin-bottom: 30px
+      text-align: left
+
 
   &__fields
     display: grid
     grid-template-columns: repeat(3, 1fr)
     gap: 40px
     margin-bottom: 30px
+    @media screen and (max-width: 1365px)
+      grid-template-columns: repeat(1, 1fr)
+      gap: 20px
+
 
   &__fields-btn
     width: 100%
@@ -199,10 +262,16 @@ span
   &__assent
     text-align: center
     margin-bottom: 80px
+    @media screen and (max-width: 1365px)
+      margin-bottom: 30px
 
 
   &__submit
     text-align: center
+    .btn
+      @media screen and (max-width: 767px)
+        width: 100%
+
 
 
 .vacancy-info
@@ -217,37 +286,59 @@ span
       color: $pink
 
 
-
-.footer
-  background-color: $dark-gray
-  &__wrap
-    @extend %fb
-    align-items: center
-
-  &__nav
-    display: flex
-    gap: 60px
-
-  &__contacts
-    display: flex
-    flex-direction: column
-    gap: 10px
-
-
-  &__telephone
-    font-size: 20px
-    @extend %900
-    color: $pink
-
-  &__mail
-    font-size: 14px
-
-
 .up-btn
   display: block
   position: fixed
   bottom: 40px
   right: 60px
+  z-index: 100
+  @media screen and (max-width: 1365px)
+    bottom: 20px
+    right: 30px
+    transform: scale(0.7)
+
+
+.footer
+  background-color: $dark-gray
+
+  &__wrap
+    @extend %fb
+    align-items: center
+    gap: 30px
+    @media screen and (max-width: 1365px)
+      flex-direction: column
+      align-items: flex-start
+
+
+  &__nav
+    display: flex
+    gap: 60px
+    @media screen and (max-width: 1365px)
+    	gap: 10px
+    
+
+  &__contacts
+    display: flex
+    flex-direction: column
+    gap: 10px
+    text-align: right
+    @media screen and (max-width: 1365px)
+    	align-self: flex-end
+    
+
+
+  &__telephone
+    font-size: 20px
+    font-weight: 900
+    color: $pink
+    @media screen and (max-width: 1365px)
+    	font-size: 18px
+
+
+  &__mail
+    font-size: 14px
+
+
 
 
 

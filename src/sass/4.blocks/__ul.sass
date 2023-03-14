@@ -3,10 +3,12 @@
 
   li
     font-size: 20px
-    padding-left: 15px
+    padding-left: 20px
     position: relative
     line-height: 1.4
     @extend %300
+    @media screen and (max-width: 1365px)
+      font-size: 16px
  
     &:before
       content: ''
@@ -18,8 +20,6 @@
       left: 0
       top: 10px
 
-    @media screen and (max-width: 767px)
-      font-size: 13px
 
   &--white
     li:before
