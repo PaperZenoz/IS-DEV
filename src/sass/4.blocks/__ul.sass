@@ -2,23 +2,25 @@
   margin-bottom: 25px
 
   li
-    margin-bottom: 10px
     font-size: 20px
-    color: white
     padding-left: 15px
     position: relative
-    line-height: 1.2
-    @extend %400
+    line-height: 1.4
+    @extend %300
  
     &:before
       content: ''
       width: 6px
       height: 6px
       border-radius: 50%
-      background: white
+      background: rgba(41, 41, 41, 0.12)
       position: absolute
       left: 0
       top: 10px
 
     @media screen and (max-width: 767px)
       font-size: 13px
+
+  &--white
+    li:before
+      background-color: white

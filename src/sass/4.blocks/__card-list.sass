@@ -1,0 +1,23 @@
+.card-list
+  list-style-type: none
+  counter-reset: num
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 23px
+  margin-bottom: 0
+  &__item
+    &::before
+      @import url('https://fonts.cdnfonts.com/css/museo-sans-cyrl')
+      font-family: 'Museo Sans Cyrl', sans-serif
+      content: counter(num, decimal-leading-zero)
+      counter-increment: num
+      position: absolute
+      right: 40px
+      top: 20px
+      font-size: 100px
+      color: $ultra-light-gray
+      @extend %900
+      background-color: $transparent
+      left: auto
+      line-height: 100px
+

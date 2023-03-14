@@ -1,18 +1,26 @@
 .card
-  background-color: $white
-  position: relative
-  border-radius: 42px
-  @extend %shadow
-  padding: 60px 40px 40px
+  &__body
+    background-color: $white
+    position: relative
+    z-index: 10
+    border-radius: 42px
+    @extend %shadow
+    padding: 40px 40px 40px
+    margin-bottom: 0
+    box-shadow: 0px 13px 50px #D1D5E3
   &__title
-    color: #B78E78
+    background: linear-gradient(83.45deg, #B78E78 -8.26%, #D270D5 105.81%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+
     @extend %900
     font-size: 25px
     padding-bottom: 40px
     position: relative
     margin-bottom: 40px
     line-height: 1
-    width: 100px
+    width: 220px
 
     &:before
       content: ''
@@ -21,8 +29,14 @@
       display: block
       position: absolute
       bottom: 0
-
       background-color: $light-gray
+
+  &__title--no-outline
+    padding-bottom: 0
+    margin-bottom: 10px
+
+    &:before
+      display: none
 
   &__photo
     position: absolute
@@ -34,10 +48,25 @@
 
   &__content strong, p
     color: #86969E
-
   &__content strong
     font-size: 20px
-
   &__content p
     font-size: 18px
     line-height: 1.2
+  &__more
+    text-align: center
+    display: block
+    margin-top: 30px
+  &--with-tail:nth-child(-n + 6)
+    position: relative
+
+    &:after
+      content: ''
+      display: block
+      width: 100%
+      position: absolute
+      height: 160px
+      background-color: white
+      left: 0
+      transform: translateY(-30px)
+      border-radius: 0 0 42px 42px
