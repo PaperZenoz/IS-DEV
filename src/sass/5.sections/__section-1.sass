@@ -2,42 +2,108 @@
   box-shadow: 0px 13px 50px #789499
 
 
-body
-  font-family: 'Inter', sans-serif
-  @extend %300
-
-p
-  line-height: 1.4
-
-  font-size: 20px
-  @extend %lc
-  @media screen and (max-width: 1365px)
-    font-size: 16px
-
-
-span
-  color: $black
-  font-size: 18px
-  line-height: 1.4
-  @media screen and (max-width: 1365px)
-    font-size: 16px
-
-
-
-br
-  @media screen and (max-width: 1365px)
-    content: " "
-
-
 %radius-big
   border-radius: 40px
+
+
+#preloader
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  background: white
+  z-index: 100000000000
+  @extend %fc
+
+
+@keyframes loader-rotate
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(360deg)
 
 
 .nav
   display: flex
   gap: 60px
+  position: relative
+  z-index: 10
+  @extend %transition
   @media screen and (max-width: 1365px)
+    opacity: 0
+    pointer-events: none
+
+    
+    position: absolute
+    top: 0
+    flex-direction: column
+    gap: 30px
+    background: linear-gradient(227.87deg, #0C0E42 14.03%, #353A88 86.78%)
+    padding: 80px 15px 25px
+    width: 100%
+    left: 0
+    &__link
+      color: $pink
+      
+    &.open
+      opacity: 1
+      pointer-events: all
+      
+
+  &__bg
     display: none
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background-image: url("../../images/nav/bg.png")
+    background-repeat: no-repeat
+    background-position: top -5px right
+    pointer-events: none
+    @media screen and (max-width: 1365px)
+      display: block
+
+  &__close-btn
+    display: none
+    position: absolute
+    right: 15px
+    top: 50px
+    @media screen and (max-width: 1365px)
+      display: block
+
+
+.burger
+  display: none
+  flex-direction: column
+  align-items: flex-end
+  position: relative
+  cursor: pointer
+  @media screen and (max-width: 639px)
+    margin-top: 0px
+    margin-left: 0px
+
+  span
+    display: block
+    width: 30px
+    height: 6px
+    border: 2px solid #FFFFFF
+    border-radius: 8px
+    background: transparent
+    margin-bottom: 2px
+    opacity: 1
+    position: relative
+    @extend %lc
+    @extend %transition
+
+    &:nth-child(2)
+      width: 30px
+      border: 2px solid $pink
+
+
+  @media screen and (max-width: 1365px)
+    display: flex
 
 
 .header
@@ -46,9 +112,9 @@ br
   top: 0
   left: 0
   right: 0
+  z-index: 100
   @media screen and (max-width: 1365px)
-  	padding-top: 40px
-  
+    padding-top: 40px
 
 
   &__wrap
@@ -58,8 +124,6 @@ br
     height: 80px
     @media screen and (max-width: 1365px)
       height: 40px
-
-
 
 .banner
   background: linear-gradient(227.87deg, #0C0E42 14.03%, #353A88 86.78%)
@@ -73,8 +137,15 @@ br
     justify-content: center
     position: relative
     @media screen and (max-width: 1365px)
-    	margin-top: 70px
-    
+      margin-top: 70px
+      padding-bottom: 220px
+
+
+  &__content
+    position: relative
+    z-index: 10
+    @media screen and (max-width: 639px)
+      width: 280px
 
   &__supertitle
     font-size: 30px
@@ -84,7 +155,6 @@ br
       font-size: 16px
       margin-bottom: 10px
 
-    
 
   &__title
     font-size: 45px
@@ -107,38 +177,49 @@ br
 
   &__bg
     position: absolute
+    width: 740px
+    height: 770px
+    background-image: url("../../images/banner/bg.png")
+    background-size: contain
+    background-repeat: no-repeat
     top: -50px
     right: -100px
     @media screen and (max-width: 1365px)
-      display: none
-
+      background-image: url("../../images/banner/bg-mobile.png")
+      width: 290px
+      top: calc(100% - 35px)
+      transform: translateY(calc(-50% - 30px))
+      right: -10px
 
 .company
   background-color: $pink
   background-image: url("../../images/company/bg.png")
   background-repeat: no-repeat
   background-position: right 100px bottom 150px
-
   color: white
 
   &__wrap
     position: relative
-    @extend %pb120
+    padding-bottom: 120px
+    @media screen and (max-width: 1365px)
+      padding-bottom: 30px
 
   &__h2
-    @extend %mb40
+    margin-bottom: 40px
 
   &__btn
-    @extend %mt20
-
+    margin-top: 20px
+    @media screen and (max-width: 639px)
+      width: 100%
 
 .project
   background-color: $metal-green
   color: white
   background-image: url("../../images/project/bg.png")
   background-repeat: no-repeat
-  background-position: left bottom
-
+  background-position: left top 200px
+  @media screen and (max-width: 639px)
+    background-image: url("../../images/project/bg.png")
 
   &__wrap
     position: relative
@@ -147,17 +228,35 @@ br
     display: grid
     grid-template-columns: auto 630px
     gap: 30px
-    margin-bottom: 50px
+    margin-bottom: 60px
     @media screen and (max-width: 1365px)
       grid-template-columns: 1fr
       margin-bottom: 30px
 
-
-  &__left-content
+  &__iphone
     position: relative
     pointer-events: none
+    height: 665px
+    margin-top: -220px
+    @media screen and (max-width: 1365px)
+      height: 385px
+      margin-top: -120px
+
+    img
+      position: absolute
+      right: -15px
+
+      @media screen and (min-width: 1366px)
+        left: -125px
+
+  &__iphone-descktop
     @media screen and (max-width: 1365px)
       display: none
+
+  &__iphone-mobile
+    display: none
+    @media screen and (max-width: 1365px)
+      display: block
 
 
     img
@@ -166,12 +265,11 @@ br
       left: -70px
 
   &__more-link
-    margin: 60px 0
+    margin: 50px 0
     display: flex
     justify-content: right
     @media screen and (max-width: 1365px)
       margin: 30px 0
-
 
   &__buttons
     display: flex
@@ -182,8 +280,9 @@ br
       .btn
         width: 100%
 
+  &__bottom
 
-
+    display: none
 
 .team
   background-color: $light-green
@@ -194,15 +293,69 @@ br
   &__wrap
     position: relative
 
-  &__grid
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
+  &__list
+    display: flex
     gap: 20px
     @media screen and (max-width: 1365px)
-      grid-template-columns: repeat(2, 1fr)
+      grid-template-columns: repeat(1, 1fr)
 
-    @media screen and (max-width: 767px)
-      grid-template-columns: 1fr
+
+
+  &__card
+
+    width: calc(100% / 3 - (40px / 3))
+
+    &.card--current
+      width: calc((100% / 3 - (40px / 3)) * 2)
+      transition: all ease .5s
+
+      .card__close, .card__ancor
+        display: inline-block
+
+      .card__more
+        display: none
+
+
+    &.card--hide
+      display: none
+
+
+
+    .card__body
+        margin: 0 5px
+        @media screen and (max-width: 1365px)
+          margin:
+          box-shadow: none
+
+
+
+
+
+
+
+
+
+
+
+
+  &__slick-slider
+    @media screen and (max-width: 1365px)
+      margin-bottom: 35px
+
+  &__vacancy-btn
+    display: none
+    @media screen and (max-width: 1365px)
+      display: flex
+      margin: 0 auto
+    @media screen and (max-width: 639px)
+      width: 100%
+
+
+
+
+
+
+
 
 
 .opportunities
@@ -210,6 +363,7 @@ br
   background-image: url("../../images/opportunities/bg.png")
   background-repeat: no-repeat
   background-position: center center
+  background-size: contain
 
   &__wrap
     position: relative
@@ -268,11 +422,10 @@ br
 
   &__submit
     text-align: center
+
     .btn
       @media screen and (max-width: 767px)
         width: 100%
-
-
 
 .vacancy-info
   background-color: $ultra-light-gray
@@ -285,7 +438,6 @@ br
     span
       color: $pink
 
-
 .up-btn
   display: block
   position: fixed
@@ -296,7 +448,6 @@ br
     bottom: 20px
     right: 30px
     transform: scale(0.7)
-
 
 .footer
   background-color: $dark-gray
@@ -314,8 +465,8 @@ br
     display: flex
     gap: 60px
     @media screen and (max-width: 1365px)
-    	gap: 10px
-    
+      gap: 10px
+
 
   &__contacts
     display: flex
@@ -323,8 +474,7 @@ br
     gap: 10px
     text-align: right
     @media screen and (max-width: 1365px)
-    	align-self: flex-end
-    
+      align-self: flex-end
 
 
   &__telephone
@@ -332,7 +482,7 @@ br
     font-weight: 900
     color: $pink
     @media screen and (max-width: 1365px)
-    	font-size: 18px
+      font-size: 18px
 
 
   &__mail

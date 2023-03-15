@@ -2,27 +2,31 @@ html
   scroll-behavior: smooth
 
 body
-
   color: black
   font-size: 15px
   display: flex
   flex-direction: column
   min-height: 100vh
-  font-weight: 500
-  font-family: 'Montserrat', sans-serif
+  font-family: 'Inter', sans-serif
+  font-weight: 300
 
+p
+  line-height: 1.4
+  font-size: 20px
+  margin-bottom: 10px
+  @extend %lc
+  @media screen and (max-width: 1365px)
+    font-size: 16px
+
+
+span
+  color: $black
+  font-size: 18px
+  line-height: 1.4
+  @media screen and (max-width: 1365px)
+    font-size: 16px
 
 strong
   display: inline-block
   font-weight: bold
 
-a
-  color: black
-  text-decoration: none
-
-
-p
-  font-size: 15px
-  display: inline-block
-  margin-bottom: 10px
-  font-weight: 400
