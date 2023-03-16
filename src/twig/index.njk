@@ -9,7 +9,7 @@
 {% block content %}
 
     {% set _ = 'banner' %}
-    <div class="{{ _ }} section">
+    <div id="banner" class="{{ _ }} section">
         <div class="container">
             <div class="{{ _ }}__wrap">
                 <div class="{{ _ }}__bg"></div>
@@ -24,7 +24,7 @@
                         Разрабатываем уникальные
                         продукты
                     </div>
-                    <a href="#" class="btn">
+                    <a href="#project" class="btn">
                         О TAPYOU
                     </a>
 
@@ -35,7 +35,7 @@
     </div>
 
     {% set _ = 'company' %}
-    <div class="{{ _ }} section">
+    <div id="company" class="{{ _ }} section">
         <div class="container">
             <div class="{{ _ }}__wrap">
                 <h1 class="h1">О компании</h1>
@@ -64,7 +64,7 @@
     </div>
 
     {% set _ = 'project' %}
-    <div class="{{ _ }} section">
+    <div id="project" class="{{ _ }} section">
         <div class="container">
             <div class="{{ _ }}__wrap">
                 <div class="{{ _ }}__top">
@@ -235,7 +235,7 @@
     </div>
 
     {% set  _ = 'team' %}
-    <div class="{{ _ }} section">
+    <div id="team" class="{{ _ }} section">
         <div class="container">
             <div class="{{ _ }}__wrap">
                 <h2 class="h2">Команда</h2>
@@ -368,7 +368,7 @@
                     subtitle: 'Заботиться о здоровье – это наш образ жизни'
                 },   {
                     title: 'Чувствовать пульс',
-                    subtitle: 'Мир меняется стремительно, и мы стареемся за ним успеть'
+                    subtitle: 'Мир меняется стремительно, и мы стараемся за ним успеть'
                 }] %}
                 <ol class="card-list">
                     {% for item in list %}
@@ -401,7 +401,7 @@
     </div>
 
     {% set  _ = 'vacancy' %}
-    <div class="{{ _ }} section">
+    <div id="vacancy" class="{{ _ }} section">
         <div class="container">
             <div class="{{ _ }}__wrap">
                 <h1 class="h1">
@@ -425,9 +425,10 @@
                     'Backend Developer',
                     'Senior QA Engineer'
                 ] %}
-                <ol class="{{ _ }}__card-list card-list">
+
+                <ol class="{{ _ }}__card-list card-list js--card-tails">
                     {% for item in list %}
-                        <li class="card card--second card--with-tail">
+                        <li class="card card--second">
                             <div class="card-list__item card__body">
                                 <div class="card__title">
                                     {{ item }}
@@ -437,7 +438,7 @@
                                         {{ item.subtitle }}
                                     </p>
 
-                                    <a href="#" class="card__ancor">
+                                    <a href="#" class="card__ancor ">
                                         <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <rect width="39" height="39" rx="19.5" fill="#E4668C"/>
@@ -461,6 +462,15 @@
     <div class="{{ _ }} section">
         <div class="container">
             <div class="{{ _ }}__wrap">
+                <a href="#" class="{{_}}__back">
+                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="56" height="56" rx="28" fill="#282B2F"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4755 21.9596C29.9149 21.3989 29.0057 21.3989 28.4448 21.9596L23.9912 26.4118C23.4303 26.9725 23.43 27.8817 23.9905 28.4425L28.4413 32.8946C29.0018 33.4554 29.911 33.4554 30.4719 32.8946C31.0329 32.3339 31.0332 31.4247 30.4726 30.8639L27.0369 27.4271L30.4748 23.9903C31.0358 23.4295 31.036 22.5204 30.4755 21.9596Z" fill="white"/>
+                    </svg>
+                </a>
+                
+                
+                
                 <h1 class="h1">
                     Вакансия
                 </h1>
@@ -471,7 +481,7 @@
                     Наш стек: <span>Kotlin only, RxJava, Dagger, Room, Retrofit, Centrifuge.</span>
                 </p>
                 <p>
-                    Технологии в первую очередь связаны с видеозаписью, звонками, анимациями: <span>ffmpeg, MediaCodec,
+                    Технологии в ,первую очередь, связаны с видеозаписью, звонками, анимациями: <span>ffmpeg, MediaCodec,
                         MediaMuxer, Lottie, WebRTC.</span>
                 </p>
 
@@ -605,11 +615,14 @@
             <div class="{{ _ }}__wrap">
 
                 <a href="#" class="{{ _ }}__logo logo"></a>
-                <div class="{{ _ }}__nav">
-                    {% set  list = [ 'Компания', 'Продукт', 'Команда', 'Вакансии'] %}
-                    {% for item in list %}
-                        <a href="#" class="link">{{ item }}</a>
-                    {% endfor %}
+                <div class="footer__nav">
+                    <a href="#company" class="link">Компания</a>
+
+                    <a href="#project" class="link">Продукт</a>
+
+                    <a href="#team" class="link">Команда</a>
+
+                    <a href="#vacancy" class="link">Вакансии</a>
                 </div>
                 <div class="{{ _ }}__contacts">
                     <a href="#" class="{{ _ }}__telephone link">
@@ -629,7 +642,7 @@
 
 
     {% set  _ = 'up-btn' %}
-    <a href="#" class="{{ _ }}">
+    <a href="#" class="{{ _ }}" style="display: none">
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="56" width="56" height="56" rx="28" transform="rotate(90 56 0)" fill="#282B2F"/>
             <path fill-rule="evenodd" clip-rule="evenodd"

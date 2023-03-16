@@ -217,7 +217,7 @@
   color: white
   background-image: url("../../images/project/bg.png")
   background-repeat: no-repeat
-  background-position: left top 200px
+  background-position: left top 220px
   @media screen and (max-width: 639px)
     background-image: url("../../images/project/bg.png")
 
@@ -353,11 +353,6 @@
 
 
 
-
-
-
-
-
 .opportunities
   background-color: $light-gray
   background-image: url("../../images/opportunities/bg.png")
@@ -434,9 +429,24 @@
   background-position: left center
 
 
+
+
   &__wrap
+    position: relative
+    padding-top: 70px
+    @media screen and (max-width: 1365px)
+      padding: 0
+
     span
       color: $pink
+
+  &__back
+    position: absolute
+    left: 0
+    top: -30px
+    @media screen and (max-width: 1365px)
+      display: none
+
 
 .up-btn
   display: block

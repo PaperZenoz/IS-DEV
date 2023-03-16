@@ -54,6 +54,7 @@
   &__content
     max-height: 350px
     overflow: hidden
+
     span
       color: $pink
 
@@ -97,7 +98,7 @@
     transform: translate(50%, 50%)
 
 
-  &--with-tail:nth-child(-n + 6)
+  &--with-tail
     position: relative
 
     &:after
@@ -112,6 +113,20 @@
       border-radius: 0 0 42px 42px
 
   &--second
+    .card__title
+      margin-bottom: 0
+      &:before
+        display: none
+        padding-bottom: 0
+
+
+    .card__ancor
+      display: block
+      position: relative
+      right: 0
+      transform: none
+      margin-top: 0
+
 
     @media screen and (max-width: 1365px)
       .card__title
