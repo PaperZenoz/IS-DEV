@@ -50,10 +50,17 @@
   &__photo
     position: absolute
     right: 40px
+    width: 80px
+    height: 80px
+    border-radius: 50%
 
   &__content
     max-height: 350px
     overflow: hidden
+    @extend %scrollbar
+    @media screen and (max-width: 767px)
+      overflow-y: scroll
+
 
     span
       color: $pink

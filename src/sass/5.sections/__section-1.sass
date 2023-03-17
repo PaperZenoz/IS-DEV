@@ -80,7 +80,7 @@
   align-items: flex-end
   position: relative
   cursor: pointer
-  @media screen and (max-width: 639px)
+  @media screen and (max-width: 767px)
     margin-top: 0px
     margin-left: 0px
 
@@ -144,16 +144,21 @@
   &__content
     position: relative
     z-index: 10
-    @media screen and (max-width: 639px)
+    @media screen and (max-width: 767px)
       width: 280px
 
   &__supertitle
     font-size: 30px
     margin-bottom: 20px
     font-weight: 400
+    strong
+      font-size: 45px
+      @extend %500
     @media screen and (max-width: 1365px)
       font-size: 16px
       margin-bottom: 10px
+      strong
+        font-size: 24px
 
 
   &__title
@@ -164,11 +169,12 @@
 
 
   &__subtitle
-    font-size: 35px
+    font-size: 40px
     margin-top: 40px
     color: $light-blue
     font-weight: 400
     margin-bottom: 80px
+    max-width: 300px
     @media screen and (max-width: 1365px)
       font-size: 20px
       margin-top: 20px
@@ -209,7 +215,7 @@
 
   &__btn
     margin-top: 20px
-    @media screen and (max-width: 639px)
+    @media screen and (max-width: 767px)
       width: 100%
 
 .project
@@ -218,7 +224,7 @@
   background-image: url("../../images/project/bg.png")
   background-repeat: no-repeat
   background-position: left top 220px
-  @media screen and (max-width: 639px)
+  @media screen and (max-width: 767px)
     background-image: url("../../images/project/bg.png")
 
   &__wrap
@@ -230,8 +236,15 @@
     gap: 30px
     margin-bottom: 60px
     @media screen and (max-width: 1365px)
+      grid-template-columns: auto 460px
+
+
+
+    @media screen and (max-width: 767px)
       grid-template-columns: 1fr
       margin-bottom: 30px
+
+
 
   &__iphone
     position: relative
@@ -315,6 +328,9 @@
       .card__more
         display: none
 
+      .card__content
+        max-height: max-content
+
 
     &.card--hide
       display: none
@@ -347,7 +363,7 @@
     @media screen and (max-width: 1365px)
       display: flex
       margin: 0 auto
-    @media screen and (max-width: 639px)
+    @media screen and (max-width: 767px)
       width: 100%
 
 
@@ -467,14 +483,19 @@
     align-items: center
     gap: 30px
     @media screen and (max-width: 1365px)
-      flex-direction: column
-      align-items: flex-start
+      display: grid
+      grid-template-columns: 1fr 2fr
+    @media screen and (max-width: 767px)
+      grid-template-columns: 1fr
+
+
 
 
   &__nav
     display: flex
     gap: 60px
     @media screen and (max-width: 1365px)
+      justify-content: space-between
       gap: 10px
 
 
@@ -484,7 +505,13 @@
     gap: 10px
     text-align: right
     @media screen and (max-width: 1365px)
+      text-align: left
+    @media screen and (max-width: 767px)
       align-self: flex-end
+      text-align: right
+
+
+
 
 
   &__telephone
