@@ -23,6 +23,9 @@
   100%
     transform: rotate(360deg)
 
+i
+  font-style: italic
+
 
 .nav
   display: flex
@@ -34,7 +37,7 @@
     opacity: 0
     pointer-events: none
 
-    
+
     position: absolute
     top: 0
     flex-direction: column
@@ -45,11 +48,11 @@
     left: 0
     &__link
       color: $pink
-      
+
     &.open
       opacity: 1
       pointer-events: all
-      
+
 
   &__bg
     display: none
@@ -151,9 +154,11 @@
     font-size: 30px
     margin-bottom: 20px
     font-weight: 400
+
     strong
       font-size: 45px
-      @extend %500
+      font-weight: 500
+
     @media screen and (max-width: 1365px)
       font-size: 16px
       margin-bottom: 10px
@@ -239,11 +244,9 @@
       grid-template-columns: auto 460px
 
 
-
     @media screen and (max-width: 767px)
       grid-template-columns: 1fr
       margin-bottom: 30px
-
 
 
   &__iphone
@@ -313,7 +316,6 @@
       grid-template-columns: repeat(1, 1fr)
 
 
-
   &__card
 
     width: calc(100% / 3 - (40px / 3))
@@ -336,22 +338,10 @@
       display: none
 
 
-
     .card__body
-        margin: 0 5px
-        @media screen and (max-width: 1365px)
-          margin:
-          box-shadow: none
-
-
-
-
-
-
-
-
-
-
+      margin: 0 5px
+      @media screen and (max-width: 1365px)
+        box-shadow: none
 
 
   &__slick-slider
@@ -365,8 +355,6 @@
       margin: 0 auto
     @media screen and (max-width: 767px)
       width: 100%
-
-
 
 
 .opportunities
@@ -445,8 +433,6 @@
   background-position: left center
 
 
-
-
   &__wrap
     position: relative
     padding-top: 70px
@@ -488,8 +474,6 @@
       grid-template-columns: 1fr
 
 
-
-
   &__nav
     display: flex
     gap: 60px
@@ -510,9 +494,6 @@
       text-align: right
 
 
-
-
-
   &__telephone
     font-size: 20px
     font-weight: 900
@@ -523,8 +504,6 @@
 
   &__mail
     font-size: 14px
-
-
 
 
 //всплывающее окно отправки резюме
@@ -548,14 +527,11 @@
     justify-content: center
 
 
-
-
-
   &__title
     margin-bottom: 40px
     font-size: 45px
     @extend %up
-    @extend %600
+    font-weight: 600
 
     span
       font-size: 45px
@@ -577,7 +553,6 @@
       font-size: 18px
 
 
-
   &__subtitle
     font-size: 20px
     margin-bottom: 70px
@@ -589,7 +564,6 @@
       line-height: 1.2
     @media screen and (max-width: 1023px)
       margin-bottom: 30px
-
 
 
   &__buttons

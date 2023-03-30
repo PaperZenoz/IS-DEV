@@ -1,7 +1,7 @@
 "use strict";
 const gulp = require('gulp');
 const htmlbeautify = require('gulp-html-beautify');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));;
 const browserSync = require('browser-sync');
 const imagemin = require('gulp-imagemin');
 const imgCompress = require('imagemin-jpeg-recompress');
