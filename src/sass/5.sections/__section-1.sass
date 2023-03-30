@@ -463,7 +463,6 @@
     @media screen and (max-width: 1365px)
       display: none
 
-
 .up-btn
   display: block
   position: fixed
@@ -524,6 +523,87 @@
 
   &__mail
     font-size: 14px
+
+
+
+
+//всплывающее окно отправки резюме
+.resume-popup
+  position: relative
+  z-index: 100
+  max-width: 1180px
+  height: 680px
+  background-color: $light-green
+  border-radius: 40px
+  padding: 130px 30px
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-image: url("data:image/svg+xml,%3Csvg width='912' height='650' viewBox='0 0 912 650' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.15' fill-rule='evenodd' clip-rule='evenodd' d='M112 305.5C112 495.762 266.238 650 456.5 650C646.762 650 801 495.762 801 305.5C801 115.238 646.762 -39 456.5 -39C266.238 -39 112 115.238 112 305.5ZM456.503 566.982C312.091 566.982 195.022 449.912 195.022 305.501C195.022 161.089 312.091 44.0195 456.503 44.0195C600.915 44.0195 717.984 161.089 717.984 305.501C717.984 449.912 600.915 566.982 456.503 566.982ZM456.503 576.982C306.569 576.982 185.022 455.435 185.022 305.501C185.022 155.566 306.569 34.0195 456.503 34.0195C606.438 34.0195 727.984 155.566 727.984 305.501C727.984 455.435 606.438 576.982 456.503 576.982ZM456.498 485.689C356.982 485.689 276.309 405.016 276.309 305.5C276.309 205.984 356.982 125.311 456.498 125.311C556.014 125.311 636.688 205.984 636.688 305.5C636.688 405.016 556.014 485.689 456.498 485.689Z' fill='white'/%3E%3Cpath opacity='0.15' fill-rule='evenodd' clip-rule='evenodd' d='M43.5 143C19.4756 143 0 123.524 0 99.5C0 75.4756 19.4756 56 43.5 56C67.5244 56 87 75.4756 87 99.5C87 123.524 67.5244 143 43.5 143ZM23 99.5C23 110.822 32.1782 120 43.5 120C54.8218 120 64 110.822 64 99.5C64 88.1782 54.8218 79 43.5 79C32.1782 79 23 88.1782 23 99.5ZM17 99.5C17 114.136 28.8645 126 43.5 126C58.1355 126 70 114.136 70 99.5C70 84.8645 58.1355 73 43.5 73C28.8645 73 17 84.8645 17 99.5Z' fill='white'/%3E%3Ccircle opacity='0.15' cx='894' cy='463' r='18' fill='white'/%3E%3C/svg%3E%0A")
+  background-repeat: no-repeat
+  background-position: top center
+  @media screen and (max-width: 1365px)
+    height: 400px
+    padding: 40px 15px
+    justify-content: center
+
+
+
+
+
+  &__title
+    margin-bottom: 40px
+    font-size: 45px
+    @extend %up
+    @extend %600
+
+    span
+      font-size: 45px
+
+      &.pink
+        color: $pink
+
+      @media screen and (max-width: 1365px)
+        font-size: 28px
+        margin-bottom: 25px
+      @media screen and (max-width: 1365px)
+        font-size: 18px
+
+    @media screen and (max-width: 1365px)
+      font-size: 28px
+      margin-bottom: 25px
+      text-align: center
+    @media screen and (max-width: 1365px)
+      font-size: 18px
+
+
+
+  &__subtitle
+    font-size: 20px
+    margin-bottom: 70px
+    @media screen and (max-width: 1365px)
+      font-size: 16px
+      margin-bottom: 50px
+      max-width: 400px
+      text-align: center
+      line-height: 1.2
+    @media screen and (max-width: 1023px)
+      margin-bottom: 30px
+
+
+
+  &__buttons
+    display: flex
+    gap: 30px
+    justify-content: center
+    @media screen and (max-width: 1365px)
+      flex-direction: column
+      align-items: center
+    @media screen and (max-width: 1023px)
+      .btn
+        font-size: 14px
+        padding: 5px 15px
+        width: 100%
 
 
 
