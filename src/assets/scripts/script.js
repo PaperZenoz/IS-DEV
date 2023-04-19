@@ -6,16 +6,44 @@ $(window).on("load", function () {
 
 
 $(document).ready(function () {
-    if ($(window).width() < 1366) {
-        $('.team__slick-slider').slick({
-            arrows: false,
-            dots: true,
-            infinite: true,
-            adaptiveHeight: true,
-            slidesToShow: 1,
-            lazyLoad: 'ondemand',
-            cssEase: 'linear',
-        })
+
+    function teamSlider() {
+        var $slider = $('.team__slick-slider')
+
+        function start() {
+            $slider.slick({
+                arrows: false,
+                dots: true,
+                infinite: true,
+                adaptiveHeight: true,
+                slidesToShow: 1,
+                lazyLoad: 'ondemand',
+                cssEase: 'linear',
+            })
+        }
+
+        function stop() {
+            $slider.slick('unslick')
+        }
+
+
+        $(window).resize(function () {
+            if ($(window).width() < 1366) {
+                if (! $slider.hasClass('slick-initialized')) {
+                    start()
+
+                }
+            } else {
+                stop()
+            }
+        });
+
+
+        if ($(window).width() < 1366) {
+            start()
+        }
+
+
     }
 
 
@@ -31,9 +59,9 @@ $(document).ready(function () {
             $link.toggleClass('open')
 
             if ($link.hasClass('open')) {
-                $link.text('Свернуть')
+                $link.text('Hide')
             } else {
-                $link.text('Узнать больше')
+                $link.text('See More')
             }
 
         }
@@ -192,6 +220,7 @@ $(document).ready(function () {
     resumeForm()
     upBtn()
     cardsTail()
+    teamSlider()
 
 
 })

@@ -24,7 +24,9 @@
     position: relative
     margin-bottom: 40px
     line-height: 1
-    width: 221px
+    width: 140px
+
+
     @media screen and (max-width: 1365px)
       font-size: 20px
       width: 100%
@@ -40,6 +42,14 @@
       bottom: 0
       background-color: $light-gray
 
+  &:first-child
+    .card__title
+      width: 125px
+
+  &:nth-child(3)
+    .card__title
+      width: 250px
+
   &__title--no-outline
     padding-bottom: 0
     margin-bottom: 10px
@@ -53,6 +63,8 @@
     width: 80px
     height: 80px
     border-radius: 50%
+    img
+      width: 100%
 
   &__content
     max-height: 350px
@@ -122,6 +134,7 @@
   &--second
     .card__title
       margin-bottom: 0
+      width: 220px
       &:before
         display: none
         padding-bottom: 0

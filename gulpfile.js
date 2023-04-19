@@ -7,6 +7,7 @@ const imagemin = require('gulp-imagemin');
 const imgCompress = require('imagemin-jpeg-recompress');
 const zip = require('gulp-zip');
 const twig = require('gulp-twig');
+var clean = require('gulp-clean');
 
 
 // server
@@ -102,10 +103,28 @@ gulp.task('beforeReady', async function () {
 
 
 
+gulp.task('clean', function () {
+    gulp.src('../IS/assets').pipe(clean({force: true}));
+    gulp.src('../IS/images').pipe(clean({force: true}));
+    gulp.src('../IS/index.html').pipe(clean({force: true}))
+    gulp.src('../landing-istandard/layout/assets').pipe(clean({force: true}));
+    gulp.src('../landing-istandard/layout/images').pipe(clean({force: true}));
+    gulp.src('../landing-istandard/layout/index.html').pipe(clean({force: true}))
+});
+
+
+gulp.task('git', function () {
+    gulp.src('./public/**/*').pipe(gulp.dest('../IS/'));
+    gulp.src('./public/**/*').pipe(gulp.dest('../landing-istandard/layout/'));
+});
+
+
+
 // dev
 gulp.task('d', gulp.series('totalRebuild', gulp.parallel('watch', 'server')));
 
 
 // build
 gulp.task('b', gulp.series('totalRebuild', 'beforeReady'));
+// gulp.task('b', gulp.series('totalRebuild', 'beforeReady', 'clean', 'git'));
 
